@@ -29,19 +29,24 @@ def load_assets():
      try:
           ship_img = pygame.image.load("assets/ship.png").convert_alpha()
           ship_img = pygame.transform.scale(ship_img, (40, 30))
-          alien1_img = pygame.image.load("assets/alien1.png").convert_alpha()
-          alien1_img = pygame.transform.scale(alien1_img, (50, 50))
-          alien2_img = pygame.image.load("assets/alien2.png").convert_alpha()
-          alien2_img = pygame.transform.scale(alien2_img, (50, 50))
+
+          enemy1_img = pygame.image.load("assets/enemy1.png").convert_alpha()
+          enemy1_img = pygame.transform.scale(enemy1_img, (50, 50))
+
+          enemy2_img = pygame.image.load("assets/enemy2.png").convert_alpha()
+          enemy2_img = pygame.transform.scale(enemy2_img, (50, 50))
+          
           shoot_sound = pygame.mixer.Sound("assets/shoot.wav")
           hit_sound = pygame.mixer.Sound("assets/hit.wav")
 
      except:
-          ship_img = alien1_img = alien2_img = shoot_sound = hit_sound = None
+          ship_img = enemy1_img = enemy2_img = shoot_sound = hit_sound = None
      return{
           "ship_img": ship_img,
-          "alien1_img": alien1_img,
-          "alien2_img": alien2_img,
+          "enemy1_img": enemy1_img,
+          "enemy2_img": enemy2_img,
           "shoot_sound": shoot_sound,
           "hit_sound": hit_sound
      }   
+
+ASSETS = load_assets()
